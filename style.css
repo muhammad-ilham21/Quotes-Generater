@@ -20,7 +20,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)); /* gradient overlay */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
   z-index: 0;
 }
 
@@ -28,7 +28,7 @@ body::before {
 .container {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.15); /* glass effect */
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
   padding: 2.5rem;
   border-radius: 16px;
@@ -90,4 +90,55 @@ body::before {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .header h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-area {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .person {
+    font-size: 1rem;
+  }
+
+  .button-area button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .text-area {
+    font-size: 1rem;
+  }
+
+  .person {
+    font-size: 0.9rem;
+  }
+
+  .button-area button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
 }
